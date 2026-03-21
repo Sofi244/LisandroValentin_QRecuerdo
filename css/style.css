@@ -6,6 +6,42 @@
     --blanco: #ffffff;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #eedcc6 0%, #e3f2fd 100%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Para que esté arriba de TODO */
+    transition: opacity 0.5s ease;
+}
+
+.welcome-box {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.welcome-box span { font-size: 50px; }
+
+.btn-abrir {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: var(--azul-oscuro);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255,154,158,0.4);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -48,8 +84,8 @@ body {
     /* Espacio abajo para que no toque el borde del cel */
 }
 
-/* Estilo base para las hojas */
-.hoja {
+/* Estilo base para las huellas */
+.huellas {
     position: fixed;
     font-size: 60px;
     /* Un poquito más chicas para que entren bien en el cel */
@@ -60,36 +96,36 @@ body {
 }
 
 /* Ajustamos las posiciones para que "abracen" la tarjeta */
-.hoja-izq {
+.huellas-izq {
     top: 10px;
     left: -10px;
 }
 
-.hoja-der {
+.huellas-der {
     top: 10px;
     right: -10px;
 }
 
-.hoja-izq-abajo {
+.huellas-izq-abajo {
     bottom: -10px;
     left: -20px;
     transform: rotate(135deg);
 }
 
-.hoja-der-abajo {
+.huellas-der-abajo {
     bottom: -10px;
     right: -20px;
     transform: rotate(-135deg);
 }
 
 /* Animación de balanceo suave tipo viento */
-.hoja-izq,
-.hoja-izq-abajo {
+.huellas-izq,
+.huellas-izq-abajo {
     animation: viento-izq 5s ease-in-out infinite;
 }
 
-.hoja-der,
-.hoja-der-abajo {
+.huellas-der,
+.huellas-der-abajo {
     animation: viento-der 5s ease-in-out infinite;
 }
 

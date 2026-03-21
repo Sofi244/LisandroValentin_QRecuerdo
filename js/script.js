@@ -38,3 +38,16 @@ function verMapa() {
     window.open(url, '_blank');
 }
 
+function comenzar() {
+    // 1. Reproducir la música (ahora el navegador lo permite porque hubo un clic)
+    const audio = document.getElementById('musica');
+    audio.play();
+
+    // 2. Desvanecer y quitar la pantalla de entrada
+    const overlay = document.getElementById('overlay');
+    overlay.style.opacity = '0';
+    
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 500); // Espera medio segundo a que termine la animación
+}

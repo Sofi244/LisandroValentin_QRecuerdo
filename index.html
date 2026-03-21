@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>¡¡¡ATENCIÓN!!! 🚨 Invitación Lisandro Valentín</title>
 
     <meta property="og:title" content="¡¡¡ATENCIÓN!!! 🚨">
     <meta property="og:description" content="Tenés un mensaje importante. Tocá para abrir la tarjeta.">
-   <meta property="og:image" content="https://mi-cumple-lisandro-valentin.netlify.app/img/Atentos.png">
+    <meta property="og:image" content="https://mi-cumple-lisandro-valentin.netlify.app/img/Atentos.png">
 
     <meta property="og:type" content="website">
 
@@ -17,14 +17,26 @@
     <meta name="twitter:image" content="https://mi-cumple-lisandro-valentin.netlify.app/img/Atentos.png">
 
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="hoja hoja-izq">🐾</div>
-    <div class="hoja hoja-der">🐾</div>
-    <div class="hoja hoja-izq-abajo">🐾</div>
-    <div class="hoja hoja-der-abajo">🐾</div>
+    <div id="overlay" class="overlay">
+        <div class="welcome-box">
+            <span>🩵</span>
+            <h1>Invitación Especial</h1>
+            <p>De: Lisandro Valentín</p>
+            <button onclick="comenzar()" class="btn-abrir">ABRIR INVITACIÓN</button>
+        </div>
+    </div>
+
+    <audio id="musica" src="Mi_Primer_Añito (1).mp3" loop></audio>
+
+    <div class="huellas huellas-izq">🐾</div>
+    <div class="huellas huellas-der">🐾</div>
+    <div class="huellas huellas-izq-abajo">🐾</div>
+    <div class="huellas huellas-der-abajo">🐾</div>
     <section class="hero">
         <div class="animalitos">
             <span>🐶</span>
@@ -67,7 +79,6 @@
             </div>
         </div>
     </main>
-<audio src="Mi_Primer_Añito (1).mp3" autoplay loop></audio>
     <script src="js/script.js"></script>
 </body>
 
