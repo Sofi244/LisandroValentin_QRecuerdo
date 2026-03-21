@@ -1,0 +1,287 @@
+:root {
+    --celeste-claro: #d0ebff;
+    --azul-oscuro: #1b4965;
+    --tierra: #D2B48C;
+    --naranja-accent: #fb8500;
+    --blanco: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Eliminamos espacios internos */
+    font-family: 'Quicksand', sans-serif;
+    /* Un degradado más suave para que no compita con el texto */
+    background: linear-gradient(180deg, #eedcc6 0%, #e3f2fd 100%); 
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hero {
+    /*background: linear-gradient(180deg, #D2B48C 0%, #e3f2fd 100%); */
+    width: 88%;
+    /* Cambiado de 100% a 88% */
+    max-width: 450px;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 30px 30px 0 0;
+    margin-top: 20px;
+    /*box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
+}
+
+.content {
+    /*background-color: var(--tierra);
+    width: 88%;
+    /* Cambiado de 100% a 88% */
+    max-width: 450px;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0 0 30px 30px;
+    /*box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    /* Espacio abajo para que no toque el borde del cel */
+}
+
+/* Estilo base para las hojas */
+.hoja {
+    position: fixed;
+    font-size: 60px;
+    /* Un poquito más chicas para que entren bien en el cel */
+    z-index: -1;
+    opacity: 0.8;
+    /* Más opacas para que resalten */
+    pointer-events: none;
+}
+
+/* Ajustamos las posiciones para que "abracen" la tarjeta */
+.hoja-izq {
+    top: 10px;
+    left: -10px;
+}
+
+.hoja-der {
+    top: 10px;
+    right: -10px;
+}
+
+.hoja-izq-abajo {
+    bottom: -10px;
+    left: -20px;
+    transform: rotate(135deg);
+}
+
+.hoja-der-abajo {
+    bottom: -10px;
+    right: -20px;
+    transform: rotate(-135deg);
+}
+
+/* Animación de balanceo suave tipo viento */
+.hoja-izq,
+.hoja-izq-abajo {
+    animation: viento-izq 5s ease-in-out infinite;
+}
+
+.hoja-der,
+.hoja-der-abajo {
+    animation: viento-der 5s ease-in-out infinite;
+}
+
+@keyframes viento-izq {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(55deg) translateY(10px);
+    }
+}
+
+@keyframes viento-der {
+
+    0%,
+    100% {
+        transform: rotate(-45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-55deg) translateY(10px);
+    }
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.2rem;
+    margin: 10px 0;
+}
+
+.badge {
+    background-image: url('../img/LV.png');
+    /* Asegúrate de que esta ruta sea correcta */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 4px dashed var(--azul-oscuro);
+    background-size: contain;
+    /* Escala la imagen para que quepa entera dentro del círculo */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-position: center;
+    /* Centra la imagen dentro del div */
+}
+
+
+
+.info-block {
+    margin: 15px 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    /* Cambié línea sólida por rayitas, queda más infantil/lindo */
+}
+
+.btn-mapa,
+.btn-confirmar {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-mapa {
+    background-color: var(--azul-oscuro);
+    color: white;
+}
+
+.btn-confirmar {
+    background-color: var(--azul-oscuro);
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-mapa:hover,
+.btn-confirmar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-container {
+    background-color: #e3f2fd;
+    /* Un celeste más suave */
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+    border: 2px dashed var(--tierra);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-segment span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: var(--naranja-accent);
+}
+
+.time-segment small {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Animación de flotado para los animalitos */
+.animalitos {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.animalitos span {
+    display: inline-block;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+/* Hacemos que cada animalito se mueva en un tiempo distinto para que no sea monótono */
+.animalitos span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animalitos span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.animalitos span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* Un toque extra: que el botón de WhatsApp "palpite" para que lo vean */
+.btn-confirmar {
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efecto de entrada suave */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: aparecer 1.5s ease-out;
+    /* (Mantené el resto de tus estilos de .content) */
+}
