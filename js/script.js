@@ -39,15 +39,31 @@ function verMapa() {
 }
 
 function comenzar() {
-    // 1. Reproducir la música (ahora el navegador lo permite porque hubo un clic)
     const audio = document.getElementById('musica');
+    const musicBtn = document.getElementById('music-btn');
+    
     audio.play();
+    
+    // Mostramos el botón de control una vez que entran
+    musicBtn.style.display = 'flex';
 
-    // 2. Desvanecer y quitar la pantalla de entrada
     const overlay = document.getElementById('overlay');
     overlay.style.opacity = '0';
-    
     setTimeout(() => {
         overlay.style.display = 'none';
-    }, 500); // Espera medio segundo a que termine la animación
+    }, 500);
 }
+
+// Lógica para el botón de pausa/play
+document.getElementById('music-btn').addEventListener('click', function() {
+    const audio = document.getElementById('musica');
+    const icon = document.getElementById('music-icon');
+    
+    if (audio.paused) {
+        audio.play();
+        icon.innerText = '⏸️';
+    } else {
+        audio.pause();
+        icon.innerText = '▶️';
+    }
+});
